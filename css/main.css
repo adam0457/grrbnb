@@ -1,0 +1,207 @@
+/*
+Primary color - hsl(91, 36%, 29%)  Green
+primary dark hsl(91, 36%, 4%)
+primary light hsl(91, 36%, 54%)
+
+secondary color hsl(25, 50%, 58%)  Brown
+secondary dark hsl(27, 87%, 33%)
+secondary light hsl(27, 87%, 83%)
+
+greys
+hsl(0deg, 0%, 10%)
+hsl(0deg, 0%, 30%)
+hsl(0deg, 0%, 50%)
+hsl(0deg, 0%, 70%)
+hsl(0deg, 0%, 90%)
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Roboto:ital@1&family=Tinos:ital@1&display=swap');
+
+html {
+  font-family: 'Tinos', serif;
+}
+
+main {
+  border: 1px solid hsl(0deg, 0%, 90%);
+  box-shadow: 0px 0px 4px hsl(0deg, 0%, 30%);
+}
+
+/* The image comes from www.unsplash.com website and was published by Jamie Street
+on June 29, 2021 */
+
+header {
+  background-color:hsl(91, 36%, 54%);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ),  url(/img/jamie-street-SZdKDnkd6k8-unsplash.jpg);   
+  padding: 16rem 0 1rem 1rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color:hsl(27, 87%, 33%);
+  text-shadow: 2px 2px 2px hsl(27, 87%, 83%);
+  font-size: 2rem;
+}
+header img {
+  width: 100%;
+  max-width: 5rem;  
+}
+
+label {
+  color:hsl(27, 87%, 33%);
+}
+input {
+  display: block;
+  width: 100%;
+  color:hsl(0deg, 0%, 30%); 
+  padding: .2rem;
+  border:.1rem solid hsl(0deg, 0%, 90%);
+  border-bottom: .1rem solid hsl(27, 87%, 83%);
+}
+.search-btn {
+  background-color: hsl(91, 36%, 29%);
+  color:hsl(0deg, 0%, 90%);
+  padding:.5rem 1rem;
+  border: 0;
+}
+
+.search-btn:hover {
+  background-color: hsl(0deg, 0%, 90%);  
+  color:hsl(91, 36%, 4%);
+  padding:.5rem 1rem;
+  border: 0;
+}
+
+.form-box {
+  margin: 1rem;
+}
+
+.min-price label::after,
+.max-price label::after {
+  content:attr(price);
+  margin-left: 12rem;
+}
+
+
+/*----- Slider -----*/
+
+input[type=range] {
+  border:0;
+  width: 100%;
+  margin: 4.05px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track
+{
+  background:hsl(0deg, 0%, 90%);
+  border-radius: 1.3px;
+  width: 100%;
+  height: 3.9px;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -4.25px;
+  width: 13px;
+  height: 12px;
+  background-color: hsl(91, 36%, 29%);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: hsl(27, 87%, 83%);
+}
+input[type=range]::-moz-range-track {
+  background:hsl(0deg, 0%, 90%);
+  border-radius: 1.3px;
+  width: 100%;
+  height: 3.9px;
+  cursor: pointer;
+} 
+input[type=range]::-moz-range-thumb {
+  width: 13px;
+  height: 12px;
+  background: hsl(91, 36%, 29%);
+  border-radius: 10px;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4.95px 0;
+  color: transparent;
+  width: 100%;
+  height: 3.9px;
+  cursor: pointer;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2b6699;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(48, 113, 169, 0.78);
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+input[type=range]::-ms-thumb {
+  width: 13px;
+  height: 12px;
+  background: #000000;
+  border: 1.8px solid #02001e;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(48, 113, 169, 0.78);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #357cb9;
+}
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align:auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type=range] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+
+/*----- End Slider-----*/
+
+@media only screen and (min-width:45em) {
+
+  form {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+  }
+
+  .place {
+    grid-column: 1 / -1;
+  }
+  
+  .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+}
+
+@media only screen and (min-width:60em){
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+  }  
+}
