@@ -78,13 +78,26 @@ input {
   margin: 1rem;
 }
 
-.min-price label::after,
+/*---- This piece of code was for the first version submitted when 
+I couldn't find how to do it with CSS, I made it work with 
+the javascript. I finally fixed it with CSS but I'm a bit late. ----*/
+
+/* .min-price label::after,
 .max-price label::after {
   content:attr(price);
   margin-left: 12rem;
+} */
+
+.price {
+  position: relative;
 }
 
-
+.price::after {
+  content:attr(data-price);
+  position: absolute;
+  right:3rem;
+  bottom:1rem;
+}
 /*----- Slider -----*/
 
 input[type=range] {
