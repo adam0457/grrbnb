@@ -32,7 +32,7 @@ on June 29, 2021 */
 
 header {
   background-color:hsl(91, 36%, 54%);
-  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ),  url(/img/jamie-street-SZdKDnkd6k8-unsplash.jpg);   
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ),  url(../img/jamie-street-unsplash.jpg);   
   padding: 16rem 0 1rem 1rem;
   background-position: center;
   background-size: cover;
